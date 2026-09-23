@@ -8,7 +8,6 @@ provenance:
 input:
   context:
   - "(t, s) : 2 × 2"
-  - 't : 2 × 2'
   hypotheses:
   - s ≤ t
   goal: s ≡ 0₂ ∨ t ≡ 1₂

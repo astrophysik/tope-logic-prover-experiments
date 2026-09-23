@@ -1,0 +1,17 @@
+id: topes.inconsistent-pair-equalities
+kind: sequent
+source: topes
+tags: [tope-prop, eq, contradiction, consistency]
+provenance:
+  kind: handwritten
+  note: "Conflicting first coordinates make the pair equalities inconsistent."
+input:
+  context:
+  - "p : 2 × 2"
+  hypotheses:
+  - "p ≡ (0₂, 0₂)"
+  - "p ≡ (1₂, 0₂)"
+  goal: "⊥"
+expected:
+  entailment: derivable
+  premises_consistency: inconsistent

@@ -1,0 +1,15 @@
+id: topes.shott-reflexive-disjunction
+kind: sequent
+source: topes
+tags: [tope-prop, eq, reflexivity, disjunction, conjunction, harvested]
+provenance:
+  kind: harvested
+  note: "Reflexivity of the upper endpoint proves both the disjunction and its conjunct."
+input:
+  context:
+  - "s : 2"
+  hypotheses: []
+  goal: "(s ≡ 0₂ ∨ 1₂ ≡ 1₂) ∧ 1₂ ≡ 1₂"
+expected:
+  entailment: derivable
+  premises_consistency: consistent

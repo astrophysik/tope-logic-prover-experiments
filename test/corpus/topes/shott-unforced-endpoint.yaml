@@ -1,0 +1,15 @@
+id: topes.shott-unforced-endpoint
+kind: sequent
+source: topes
+tags: [tope-prop, eq, conjunction, harvested]
+provenance:
+  kind: harvested
+  note: "An unconstrained interval coordinate need not equal the lower endpoint."
+input:
+  context:
+  - "(t, s) : 2 × 2"
+  hypotheses: []
+  goal: "(⊤ ∧ ⊤) ∧ t ≡ 0₂"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

@@ -1,0 +1,16 @@
+id: topes.shott-pair-substitution
+kind: sequent
+source: topes
+tags: [tope-prop, eq, conjunction, disjunction, harvested]
+provenance:
+  kind: harvested
+  note: "Equality of the first coordinates lifts to equality of pairs with a shared second coordinate."
+input:
+  context:
+  - "(t, s) : 2 × 2"
+  hypotheses:
+  - "((s ≡ 0₂ ∨ t ≡ 1₂) ∧ t ≡ 1₂) ∧ t ≡ 1₂ ∧ s ≡ 0₂"
+  goal: "(t, s) ≡ (1₂, s)"
+expected:
+  entailment: derivable
+  premises_consistency: consistent

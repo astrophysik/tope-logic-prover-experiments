@@ -1,0 +1,16 @@
+id: topes.shott-disjunction-consistent
+kind: sequent
+source: topes
+tags: [tope-prop, eq, disjunction, consistency, harvested]
+provenance:
+  kind: harvested
+  note: "The face disjunction is consistent: neither alternative leads to a contradiction."
+input:
+  context:
+  - "(t, s) : 2 × 2"
+  hypotheses:
+  - "s ≡ 0₂ ∨ t ≡ 1₂"
+  goal: "⊥"
+expected:
+  entailment: underivable
+  premises_consistency: consistent
