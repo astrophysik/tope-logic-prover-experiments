@@ -1,0 +1,16 @@
+id: topes.shott-projection-substitution
+kind: sequent
+source: topes
+tags: [tope-prop, eq, projection, conjunction, disjunction, harvested]
+provenance:
+  kind: harvested
+  note: "A projected endpoint equality lifts to equality of pairs sharing the second projection."
+input:
+  context:
+  - "x₁ : 2 × 2"
+  hypotheses:
+  - "((π₂ x₁ ≡ 0₂ ∨ π₁ x₁ ≡ 1₂) ∧ π₁ x₁ ≡ 1₂) ∧ π₁ x₁ ≡ 1₂ ∧ π₂ x₁ ≡ 0₂"
+  goal: "(1₂, π₂ x₁) ≡ (π₁ x₁, π₂ x₁)"
+expected:
+  entailment: derivable
+  premises_consistency: consistent

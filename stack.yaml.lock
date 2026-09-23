@@ -5,12 +5,16 @@
 
 packages:
 - completed:
-    hackage: g4ip-prover-2.0.0.0@sha256:07d3dc55306d1bd7c6de1f6948e15786525dc27c2a367610918971cedbad9b08,1795
+    commit: 426d06196b474e960c2608dbee727499c0777c08
+    git: https://github.com/astrophysik/g4ip-prover.git
+    name: g4ip-prover
     pantry-tree:
-      sha256: a11a04577e094489cb11c1a55b34e2596893653310a7033bc9391929d61b36b9
-      size: 993
+      sha256: 8845bdc8953be5b8c3ecd6c7093ba471c63fe9a0367db4cc6a00100d74df88b9
+      size: 1400
+    version: 2.0.0.0
   original:
-    hackage: g4ip-prover-2.0.0.0
+    commit: 426d06196b474e960c2608dbee727499c0777c08
+    git: https://github.com/astrophysik/g4ip-prover.git
 - completed:
     hackage: rzk-0.11.2@sha256:5dadc2a0e3b1809b547e3dc8887d87d8b302c3eb4b3a619bc7300fdbef85d0e8,29024
     pantry-tree:

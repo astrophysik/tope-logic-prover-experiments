@@ -8,6 +8,7 @@ import Data.Char (toLower)
 import qualified G4ipProver.Parser as G4ipParser
 import qualified G4ipProver.Proposition as G4ipProp
 import qualified G4ipProver.Prover as G4ipProver
+import qualified G4ipProver.TopeParser as TopeParser
 import Prover.Interface (Prover (..), ProverResult (..))
 
 g4ipProver :: Prover
@@ -19,18 +20,21 @@ g4ipProver =
 
 proveWithG4ip :: SequentCase -> ProverResult
 proveWithG4ip sequent =
-  case parseSequentFormula sequent of
+  case parseSequent sequent of
     Left err -> ProverUnsupported err
-    Right formula ->
-      case G4ipProver.prove formula of
+    Right (parsedHypotheses, parsedGoal) ->
+      case G4ipProver.proveSequent parsedHypotheses parsedGoal of
         Just _ -> ProverDerivable
         Nothing -> ProverUnderivable
 
-parseSequentFormula :: SequentCase -> Either String G4ipProp.Prop
-parseSequentFormula sequent = do
-  parsedHypotheses <- traverse parseCorpusFormula (context sequent ++ hypotheses sequent)
-  parsedGoal <- parseCorpusFormula (goal sequent)
-  pure (foldr G4ipProp.Imp parsedGoal parsedHypotheses)
+parseSequent :: SequentCase -> Either String ([G4ipProp.Prop], G4ipProp.Prop)
+parseSequent sequent
+  | source sequent == "topes" || not (null (context sequent)) =
+      TopeParser.parseTopeSequent (context sequent) (hypotheses sequent) (goal sequent)
+  | otherwise = do
+      parsedHypotheses <- traverse parseCorpusFormula (hypotheses sequent)
+      parsedGoal <- parseCorpusFormula (goal sequent)
+      pure (parsedHypotheses, parsedGoal)
 
 parseCorpusFormula :: String -> Either String G4ipProp.Prop
 parseCorpusFormula formula =

@@ -41,7 +41,8 @@ packages:
 #   commit: e7b331f14bcffb8367cd58fbfc8b40ec7642100a
 #
 extra-deps:
-- g4ip-prover-2.0.0.0
+- git: https://github.com/astrophysik/g4ip-prover.git
+  commit: 426d06196b474e960c2608dbee727499c0777c08
 - rzk-0.11.2
 - free-foil-0.3.2
 - kind-generics-th-0.2.3.3

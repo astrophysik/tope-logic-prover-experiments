@@ -1,0 +1,16 @@
+id: topes.shott-unforced-second-projection
+kind: sequent
+source: topes
+tags: [tope-prop, eq, projection, conjunction, disjunction, harvested]
+provenance:
+  kind: harvested
+  note: "Fixing the first projection at the upper endpoint does not force the second to the lower endpoint."
+input:
+  context:
+  - "t : 2 × 2"
+  hypotheses:
+  - "(π₂ t ≡ 0₂ ∨ π₁ t ≡ 1₂) ∧ π₁ t ≡ 1₂"
+  goal: "⊤ ∧ π₂ t ≡ 0₂"
+expected:
+  entailment: underivable
+  premises_consistency: consistent
