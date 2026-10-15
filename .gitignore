@@ -6,3 +6,4 @@ CLAUDE.md
 test/corpus/iltp/
 test/corpus/external-sequents/iltp
 results/*
+.venv/*
