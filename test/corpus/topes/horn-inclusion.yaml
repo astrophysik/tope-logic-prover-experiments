@@ -1,16 +1,16 @@
 id: topes.horn-inclusion
 kind: sequent
 source: topes
-tags: [tope-prop, eq, leq, horn, coverage, harvested]
+tags: [tope-prop, eq, leq, disjunction, horn, coverage]
 provenance:
-  kind: harvested
-  note: "Horn face condition entails membership in the triangle."
+  kind: handwritten
+  note: "Either horn face lies in the directed triangle."
 input:
   context:
-  - "(t, s) : 2 × 2"
+    - "(t, s) : 2 × 2"
   hypotheses:
-  - s ≡ 0₂ ∨ t ≡ 1₂
-  goal: s ≤ t
+    - "s ≡ 0₂ ∨ t ≡ 1₂"
+  goal: "s ≤ t"
 expected:
   entailment: derivable
   premises_consistency: consistent

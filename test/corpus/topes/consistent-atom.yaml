@@ -1,0 +1,15 @@
+id: topes.consistent-atom
+kind: sequent
+source: topes
+tags: [tope-prop, consistency]
+provenance:
+  kind: handwritten
+  note: "An unconstrained atomic tope remains consistent."
+input:
+  context: []
+  hypotheses:
+    - "p"
+  goal: "⊥"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

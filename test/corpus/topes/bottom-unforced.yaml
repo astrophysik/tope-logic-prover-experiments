@@ -1,0 +1,14 @@
+id: topes.bottom-unforced
+kind: sequent
+source: topes
+tags: [tope-prop, contradiction]
+provenance:
+  kind: handwritten
+  note: "The empty tope context is consistent."
+input:
+  context: []
+  hypotheses: []
+  goal: "⊥"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

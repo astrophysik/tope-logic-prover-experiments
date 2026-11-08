@@ -1,0 +1,16 @@
+id: topes.simplex-missing-order-link
+kind: sequent
+source: topes
+tags: [tope-prop, leq]
+provenance:
+  kind: handwritten
+  note: "One edge does not constrain the third coordinate."
+input:
+  context:
+    - "((t1, t2), t3) : 2 × 2 × 2"
+  hypotheses:
+    - "t3 ≤ t2"
+  goal: "t3 ≤ t1"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

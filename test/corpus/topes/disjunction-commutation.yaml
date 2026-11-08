@@ -1,0 +1,15 @@
+id: topes.disjunction-commutation
+kind: sequent
+source: topes
+tags: [tope-prop, disjunction]
+provenance:
+  kind: handwritten
+  note: "Disjunction is commutative up to entailment."
+input:
+  context: []
+  hypotheses:
+    - "p ∨ q"
+  goal: "q ∨ p"
+expected:
+  entailment: derivable
+  premises_consistency: consistent

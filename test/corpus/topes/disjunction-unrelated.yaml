@@ -1,0 +1,15 @@
+id: topes.disjunction-unrelated
+kind: sequent
+source: topes
+tags: [tope-prop, disjunction]
+provenance:
+  kind: handwritten
+  note: "Neither unrelated branch follows."
+input:
+  context: []
+  hypotheses:
+    - "p"
+  goal: "q ∨ r"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

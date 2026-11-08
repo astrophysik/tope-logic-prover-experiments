@@ -1,0 +1,15 @@
+id: topes.disjunction-right-unforced
+kind: sequent
+source: topes
+tags: [tope-prop, disjunction]
+provenance:
+  kind: handwritten
+  note: "A disjunction does not choose its right branch."
+input:
+  context: []
+  hypotheses:
+    - "p ∨ q"
+  goal: "q"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

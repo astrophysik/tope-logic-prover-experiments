@@ -1,0 +1,15 @@
+id: topes.conjunction-absorption
+kind: sequent
+source: topes
+tags: [tope-prop, conjunction, disjunction]
+provenance:
+  kind: handwritten
+  note: "Absorption is valid in the tope lattice."
+input:
+  context: []
+  hypotheses:
+    - "p"
+  goal: "p ∧ (p ∨ q)"
+expected:
+  entailment: derivable
+  premises_consistency: consistent

@@ -1,0 +1,16 @@
+id: topes.equality-does-not-force-endpoint
+kind: sequent
+source: topes
+tags: [tope-prop, eq]
+provenance:
+  kind: handwritten
+  note: "Equal points need not be the lower endpoint."
+input:
+  context:
+    - "(t, s) : 2 × 2"
+  hypotheses:
+    - "t ≡ s"
+  goal: "t ≡ 0₂"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

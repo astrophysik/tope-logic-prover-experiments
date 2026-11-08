@@ -1,0 +1,15 @@
+id: topes.disjunction-to-conjunction
+kind: sequent
+source: topes
+tags: [tope-prop, disjunction, conjunction]
+provenance:
+  kind: handwritten
+  note: "Case analysis does not make both branches true."
+input:
+  context: []
+  hypotheses:
+    - "p ∨ q"
+  goal: "p ∧ q"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

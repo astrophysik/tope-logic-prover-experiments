@@ -1,0 +1,15 @@
+id: topes.distributivity-forward
+kind: sequent
+source: topes
+tags: [tope-prop, conjunction, disjunction]
+provenance:
+  kind: handwritten
+  note: "Conjunction distributes over disjunction."
+input:
+  context: []
+  hypotheses:
+    - "p ∧ (q ∨ r)"
+  goal: "(p ∧ q) ∨ (p ∧ r)"
+expected:
+  entailment: derivable
+  premises_consistency: consistent

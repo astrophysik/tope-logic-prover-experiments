@@ -1,0 +1,16 @@
+id: topes.horn-lower-face
+kind: sequent
+source: topes
+tags: [tope-prop, harvested, eq, disjunction, horn]
+provenance:
+  kind: harvested
+  note: "The lower face introduces the horn disjunction."
+input:
+  context:
+    - "(t, s) : 2 × 2"
+  hypotheses:
+    - "s ≡ 0₂"
+  goal: "s ≡ 0₂ ∨ t ≡ 1₂"
+expected:
+  entailment: derivable
+  premises_consistency: consistent

@@ -1,0 +1,17 @@
+id: topes.pair-endpoint-clash
+kind: sequent
+source: topes
+tags: [tope-prop, eq, contradiction, consistency]
+provenance:
+  kind: handwritten
+  note: "Conflicting first coordinates are inconsistent."
+input:
+  context:
+    - "p : 2 × 2"
+  hypotheses:
+    - "p ≡ (0₂, 0₂)"
+    - "p ≡ (1₂, 0₂)"
+  goal: "⊥"
+expected:
+  entailment: derivable
+  premises_consistency: inconsistent

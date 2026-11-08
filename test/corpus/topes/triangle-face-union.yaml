@@ -1,0 +1,16 @@
+id: topes.triangle-face-union
+kind: sequent
+source: topes
+tags: [tope-prop, eq, leq, disjunction, coverage]
+provenance:
+  kind: handwritten
+  note: "Either restricted face lies in the horn union."
+input:
+  context:
+    - "(t, s) : 2 × 2"
+  hypotheses:
+    - "(s ≡ 0₂ ∧ s ≤ t) ∨ (t ≡ 1₂ ∧ s ≤ t)"
+  goal: "s ≡ 0₂ ∨ t ≡ 1₂"
+expected:
+  entailment: derivable
+  premises_consistency: consistent

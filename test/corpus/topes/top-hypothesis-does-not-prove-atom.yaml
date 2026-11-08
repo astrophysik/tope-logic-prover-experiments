@@ -1,0 +1,15 @@
+id: topes.top-hypothesis-does-not-prove-atom
+kind: sequent
+source: topes
+tags: [tope-prop, top]
+provenance:
+  kind: handwritten
+  note: "Top supplies no arbitrary atomic tope."
+input:
+  context: []
+  hypotheses:
+    - "⊤"
+  goal: "p"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

@@ -1,0 +1,16 @@
+id: topes.simplex-upper-boundary-face
+kind: sequent
+source: topes
+tags: [tope-prop, eq, disjunction, coverage]
+provenance:
+  kind: handwritten
+  note: "The upper face is one boundary component."
+input:
+  context:
+    - "((t1, t2), t3) : 2 × 2 × 2"
+  hypotheses:
+    - "t1 ≡ 1₂"
+  goal: "t3 ≡ 0₂ ∨ t2 ≡ t3 ∨ t1 ≡ 1₂"
+expected:
+  entailment: derivable
+  premises_consistency: consistent

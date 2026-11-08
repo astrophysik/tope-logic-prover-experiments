@@ -1,0 +1,14 @@
+id: topes.conjunction-unforced
+kind: sequent
+source: topes
+tags: [tope-prop, conjunction]
+provenance:
+  kind: handwritten
+  note: "Neither atomic tope follows from the empty context."
+input:
+  context: []
+  hypotheses: []
+  goal: "p ∧ q"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

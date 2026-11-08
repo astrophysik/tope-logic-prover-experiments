@@ -1,0 +1,20 @@
+id: topes.pair-both-congruence
+kind: sequent
+source: topes
+tags: [tope-prop, eq]
+provenance:
+  kind: handwritten
+  note: "Componentwise equality implies equality of pairs."
+input:
+  context:
+    - "t : 2"
+    - "s : 2"
+    - "r : 2"
+    - "u : 2"
+  hypotheses:
+    - "t ≡ r"
+    - "s ≡ u"
+  goal: "(t, s) ≡ (r, u)"
+expected:
+  entailment: derivable
+  premises_consistency: consistent

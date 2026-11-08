@@ -1,0 +1,19 @@
+id: topes.equality-substitution-right
+kind: sequent
+source: topes
+tags: [tope-prop, eq, leq]
+provenance:
+  kind: handwritten
+  note: "Equality substitutes in the right order argument."
+input:
+  context:
+    - "t : 2"
+    - "s : 2"
+    - "r : 2"
+  hypotheses:
+    - "t ≡ s"
+    - "r ≤ t"
+  goal: "r ≤ s"
+expected:
+  entailment: derivable
+  premises_consistency: consistent

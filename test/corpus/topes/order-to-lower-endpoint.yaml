@@ -1,0 +1,16 @@
+id: topes.order-to-lower-endpoint
+kind: sequent
+source: topes
+tags: [tope-prop, leq, eq, antisymmetry]
+provenance:
+  kind: handwritten
+  note: "Order below zero forces equality with zero."
+input:
+  context:
+    - "t : 2"
+  hypotheses:
+    - "t ≤ 0₂"
+  goal: "t ≡ 0₂"
+expected:
+  entailment: derivable
+  premises_consistency: consistent

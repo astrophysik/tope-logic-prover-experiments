@@ -1,0 +1,15 @@
+id: topes.projected-triangle-unforced
+kind: sequent
+source: topes
+tags: [tope-prop, harvested, leq, projection]
+provenance:
+  kind: harvested
+  note: "An unrestricted pair need not lie in the triangle."
+input:
+  context:
+    - "t : 2 × 2"
+  hypotheses: []
+  goal: "π₂ t ≤ π₁ t"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

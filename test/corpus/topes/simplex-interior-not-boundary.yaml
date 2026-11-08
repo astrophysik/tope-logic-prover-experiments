@@ -1,0 +1,17 @@
+id: topes.simplex-interior-not-boundary
+kind: sequent
+source: topes
+tags: [tope-prop, eq, leq, disjunction, coverage]
+provenance:
+  kind: handwritten
+  note: "Simplex membership does not imply boundary membership."
+input:
+  context:
+    - "((t1, t2), t3) : 2 × 2 × 2"
+  hypotheses:
+    - "t3 ≤ t2"
+    - "t2 ≤ t1"
+  goal: "t3 ≡ 0₂ ∨ t2 ≡ t3 ∨ t1 ≡ 1₂"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

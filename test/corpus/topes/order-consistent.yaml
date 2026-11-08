@@ -1,0 +1,16 @@
+id: topes.order-consistent
+kind: sequent
+source: topes
+tags: [tope-prop, harvested, leq, consistency]
+provenance:
+  kind: harvested
+  note: "A directed order constraint is consistent."
+input:
+  context:
+    - "(t, s) : 2 × 2"
+  hypotheses:
+    - "t ≤ s"
+  goal: "⊥"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

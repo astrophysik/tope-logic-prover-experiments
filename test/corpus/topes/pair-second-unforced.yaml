@@ -1,0 +1,16 @@
+id: topes.pair-second-unforced
+kind: sequent
+source: topes
+tags: [tope-prop, eq, projection]
+provenance:
+  kind: handwritten
+  note: "A first-coordinate restriction does not fix the second."
+input:
+  context:
+    - "p : 2 × 2"
+  hypotheses:
+    - "π₁ p ≡ 0₂"
+  goal: "π₂ p ≡ 0₂"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

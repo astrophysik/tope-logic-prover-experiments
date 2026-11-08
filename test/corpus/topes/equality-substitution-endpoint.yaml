@@ -1,0 +1,17 @@
+id: topes.equality-substitution-endpoint
+kind: sequent
+source: topes
+tags: [tope-prop, eq]
+provenance:
+  kind: handwritten
+  note: "Equality substitutes in an endpoint equality."
+input:
+  context:
+    - "(t, s) : 2 × 2"
+  hypotheses:
+    - "t ≡ s"
+    - "t ≡ 0₂"
+  goal: "s ≡ 0₂"
+expected:
+  entailment: derivable
+  premises_consistency: consistent

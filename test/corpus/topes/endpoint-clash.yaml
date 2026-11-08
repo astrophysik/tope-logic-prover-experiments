@@ -1,0 +1,17 @@
+id: topes.endpoint-clash
+kind: sequent
+source: topes
+tags: [tope-prop, harvested, eq, contradiction, consistency]
+provenance:
+  kind: harvested
+  note: "A point cannot equal both endpoints."
+input:
+  context:
+    - "t : 2"
+  hypotheses:
+    - "t ≡ 0₂"
+    - "t ≡ 1₂"
+  goal: "⊥"
+expected:
+  entailment: derivable
+  premises_consistency: inconsistent

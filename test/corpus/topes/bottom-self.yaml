@@ -1,0 +1,15 @@
+id: topes.bottom-self
+kind: sequent
+source: topes
+tags: [tope-prop, contradiction, consistency]
+provenance:
+  kind: handwritten
+  note: "A bottom hypothesis is inconsistent."
+input:
+  context: []
+  hypotheses:
+    - "⊥"
+  goal: "⊥"
+expected:
+  entailment: derivable
+  premises_consistency: inconsistent

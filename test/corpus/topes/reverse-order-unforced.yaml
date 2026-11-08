@@ -1,0 +1,16 @@
+id: topes.reverse-order-unforced
+kind: sequent
+source: topes
+tags: [tope-prop, harvested, leq]
+provenance:
+  kind: harvested
+  note: "A directed inequality does not imply its converse."
+input:
+  context:
+    - "(t, s) : 2 × 2"
+  hypotheses:
+    - "t ≤ s"
+  goal: "s ≤ t"
+expected:
+  entailment: underivable
+  premises_consistency: consistent
