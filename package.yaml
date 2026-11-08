@@ -87,3 +87,5 @@ tests:
     - filepath
     - yaml
     - aeson
+    - process
+    - text
