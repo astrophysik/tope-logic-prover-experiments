@@ -1,0 +1,15 @@
+id: topes.distinct-endpoints-inconsistent
+kind: sequent
+source: topes
+tags: [tope-prop, eq, contradiction, consistency]
+provenance:
+  kind: handwritten
+  note: "Distinct endpoints cannot be equal."
+input:
+  context: []
+  hypotheses:
+    - "0₂ ≡ 1₂"
+  goal: "⊥"
+expected:
+  entailment: derivable
+  premises_consistency: inconsistent

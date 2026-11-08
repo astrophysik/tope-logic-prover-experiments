@@ -1,0 +1,16 @@
+id: topes.horn-does-not-force-lower-face
+kind: sequent
+source: topes
+tags: [tope-prop, eq, disjunction, horn]
+provenance:
+  kind: handwritten
+  note: "Horn membership does not pick the lower face."
+input:
+  context:
+    - "(t, s) : 2 × 2"
+  hypotheses:
+    - "s ≡ 0₂ ∨ t ≡ 1₂"
+  goal: "s ≡ 0₂"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

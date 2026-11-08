@@ -1,0 +1,17 @@
+id: topes.endpoint-clash-explosion
+kind: sequent
+source: topes
+tags: [tope-prop, eq, leq, contradiction]
+provenance:
+  kind: handwritten
+  note: "An inconsistent context entails an arbitrary order claim."
+input:
+  context:
+    - "t : 2"
+  hypotheses:
+    - "t ≡ 0₂"
+    - "t ≡ 1₂"
+  goal: "1₂ ≤ 0₂"
+expected:
+  entailment: derivable
+  premises_consistency: inconsistent

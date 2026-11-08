@@ -1,0 +1,16 @@
+id: topes.order-top-opposite-unforced
+kind: sequent
+source: topes
+tags: [tope-prop, harvested, leq, eq]
+provenance:
+  kind: harvested
+  note: "One at the second coordinate does not force the reverse order."
+input:
+  context:
+    - "(t, s) : 2 × 2"
+  hypotheses:
+    - "s ≡ 1₂"
+  goal: "s ≤ t"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

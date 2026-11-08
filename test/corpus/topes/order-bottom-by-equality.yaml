@@ -1,0 +1,16 @@
+id: topes.order-bottom-by-equality
+kind: sequent
+source: topes
+tags: [tope-prop, harvested, leq, eq]
+provenance:
+  kind: harvested
+  note: "A point equal to zero is below every interval point."
+input:
+  context:
+    - "(t, s) : 2 × 2"
+  hypotheses:
+    - "t ≡ 0₂"
+  goal: "t ≤ s"
+expected:
+  entailment: derivable
+  premises_consistency: consistent

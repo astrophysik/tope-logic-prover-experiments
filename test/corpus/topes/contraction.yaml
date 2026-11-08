@@ -1,0 +1,16 @@
+id: topes.contraction
+kind: sequent
+source: topes
+tags: [tope-prop, identity]
+provenance:
+  kind: handwritten
+  note: "A repeated hypothesis supplies no extra information."
+input:
+  context: []
+  hypotheses:
+    - "p"
+    - "p"
+  goal: "p"
+expected:
+  entailment: derivable
+  premises_consistency: consistent

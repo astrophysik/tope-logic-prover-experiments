@@ -1,0 +1,15 @@
+id: topes.lower-endpoint-unforced
+kind: sequent
+source: topes
+tags: [tope-prop, harvested, eq]
+provenance:
+  kind: harvested
+  note: "An arbitrary interval point need not be the lower endpoint."
+input:
+  context:
+    - "t : 2"
+  hypotheses: []
+  goal: "t ≡ 0₂"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

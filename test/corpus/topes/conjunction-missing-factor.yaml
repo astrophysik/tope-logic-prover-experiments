@@ -1,0 +1,15 @@
+id: topes.conjunction-missing-factor
+kind: sequent
+source: topes
+tags: [tope-prop, conjunction]
+provenance:
+  kind: handwritten
+  note: "One conjunct does not introduce the other."
+input:
+  context: []
+  hypotheses:
+    - "p"
+  goal: "p ∧ q"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

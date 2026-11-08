@@ -1,0 +1,14 @@
+id: topes.distinct-endpoints
+kind: sequent
+source: topes
+tags: [tope-prop, harvested, eq]
+provenance:
+  kind: harvested
+  note: "The endpoints are distinct."
+input:
+  context: []
+  hypotheses: []
+  goal: "0₂ ≡ 1₂"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

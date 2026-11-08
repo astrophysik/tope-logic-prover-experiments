@@ -1,0 +1,15 @@
+id: topes.unrelated-atom
+kind: sequent
+source: topes
+tags: [tope-prop, identity]
+provenance:
+  kind: handwritten
+  note: "An unrelated tope is not entailed."
+input:
+  context: []
+  hypotheses:
+    - "p"
+  goal: "q"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

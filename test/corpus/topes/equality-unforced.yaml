@@ -1,0 +1,15 @@
+id: topes.equality-unforced
+kind: sequent
+source: topes
+tags: [tope-prop, eq]
+provenance:
+  kind: handwritten
+  note: "Two free interval points need not coincide."
+input:
+  context:
+    - "(t, s) : 2 × 2"
+  hypotheses: []
+  goal: "t ≡ s"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

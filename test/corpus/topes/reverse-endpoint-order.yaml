@@ -1,0 +1,14 @@
+id: topes.reverse-endpoint-order
+kind: sequent
+source: topes
+tags: [tope-prop, leq]
+provenance:
+  kind: handwritten
+  note: "The upper endpoint does not precede the lower endpoint."
+input:
+  context: []
+  hypotheses: []
+  goal: "1₂ ≤ 0₂"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

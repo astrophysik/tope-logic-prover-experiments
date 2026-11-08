@@ -1,0 +1,16 @@
+id: topes.unrelated-endpoint
+kind: sequent
+source: topes
+tags: [tope-prop, harvested, eq]
+provenance:
+  kind: harvested
+  note: "One coordinate being at an endpoint does not constrain the other."
+input:
+  context:
+    - "(t, s) : 2 × 2"
+  hypotheses:
+    - "t ≡ 0₂"
+  goal: "s ≡ 0₂"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

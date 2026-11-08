@@ -1,0 +1,15 @@
+id: topes.identity
+kind: sequent
+source: topes
+tags: [tope-prop, identity]
+provenance:
+  kind: handwritten
+  note: "A hypothesis entails itself."
+input:
+  context: []
+  hypotheses:
+    - "p"
+  goal: "p"
+expected:
+  entailment: derivable
+  premises_consistency: consistent

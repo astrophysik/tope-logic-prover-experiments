@@ -1,0 +1,15 @@
+id: topes.pair-first-unforced
+kind: sequent
+source: topes
+tags: [tope-prop, eq, projection]
+provenance:
+  kind: handwritten
+  note: "The first projection is unconstrained."
+input:
+  context:
+    - "p : 2 × 2"
+  hypotheses: []
+  goal: "π₁ p ≡ 0₂"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

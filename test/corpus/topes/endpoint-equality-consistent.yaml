@@ -1,0 +1,16 @@
+id: topes.endpoint-equality-consistent
+kind: sequent
+source: topes
+tags: [tope-prop, harvested, eq, consistency]
+provenance:
+  kind: harvested
+  note: "Equality with one endpoint is consistent."
+input:
+  context:
+    - "t : 2"
+  hypotheses:
+    - "t ≡ 0₂"
+  goal: "⊥"
+expected:
+  entailment: underivable
+  premises_consistency: consistent

@@ -1,0 +1,14 @@
+id: topes.endpoint-reflexivity
+kind: sequent
+source: topes
+tags: [tope-prop, harvested, eq, reflexivity]
+provenance:
+  kind: harvested
+  note: "The lower endpoint equals itself."
+input:
+  context: []
+  hypotheses: []
+  goal: "0₂ ≡ 0₂"
+expected:
+  entailment: derivable
+  premises_consistency: consistent

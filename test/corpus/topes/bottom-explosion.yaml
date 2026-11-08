@@ -1,0 +1,15 @@
+id: topes.bottom-explosion
+kind: sequent
+source: topes
+tags: [tope-prop, contradiction]
+provenance:
+  kind: handwritten
+  note: "Bottom entails every tope."
+input:
+  context: []
+  hypotheses:
+    - "⊥"
+  goal: "p"
+expected:
+  entailment: derivable
+  premises_consistency: inconsistent
