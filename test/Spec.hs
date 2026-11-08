@@ -9,11 +9,14 @@ import qualified Data.Aeson.KeyMap as KeyMap
 import Data.Foldable (toList)
 import qualified Data.Yaml as Yaml
 import System.Directory (doesDirectoryExist, doesFileExist, listDirectory)
+import System.Exit (ExitCode (..))
 import System.FilePath (takeExtension, (</>))
-import Test.Hspec (Spec, describe, expectationFailure, hspec, it, runIO)
+import System.Process (readProcessWithExitCode)
+import Test.Hspec (Spec, describe, expectationFailure, hspec, it, runIO, shouldBe)
+import qualified Data.Text as Text
 
 testCorpusFilePath :: FilePath
-testCorpusFilePath = "test/corpus"
+testCorpusFilePath = "test/corpus/topes"
 
 findCorpusYamlFiles :: FilePath -> IO [FilePath]
 findCorpusYamlFiles path = do
@@ -152,7 +155,24 @@ corpusFileSpec path = do
       Right (Object object) -> do
         case validateCorpusObject object of
           Left message -> expectationFailure message
-          Right () -> pure ()
+          Right () ->
+            case (lookupField "kind" object, lookupField "source" object) of
+              (Just (String "sequent"), Just (String "topes")) ->
+                case requireObjectField "expected" object of
+                  Left message -> expectationFailure message
+                  Right expectedObject ->
+                    case lookupField "entailment" expectedObject of
+                      Just (String entailment) -> do
+                        (exitCode, output, errors) <- readProcessWithExitCode "python3" ["scripts/oracle.py", path] ""
+                        case exitCode of 
+                          ExitSuccess -> 
+                            case lines output of
+                              actual : _ -> actual `shouldBe` Text.unpack entailment
+                              [] -> expectationFailure "Oracle produced no verdict"
+                          ExitFailure _ -> 
+                              expectationFailure $ "Got error during work " ++ errors
+                      _ -> expectationFailure "Missing expected.entailment"
+              _ -> pure ()
       Right _ ->
         expectationFailure "Expected top-level YAML object"
 

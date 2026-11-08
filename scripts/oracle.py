@@ -1,7 +1,8 @@
 from argparse import ArgumentParser
 import yaml
+import sys
 from enum import Enum
-from z3 import Int, IntVal, And, BoolVal, Or, Solver, Not, sat, unsat
+from z3 import Int, IntVal, And, BoolVal, Or, Solver, Not, sat, unsat, Bool
 import re
 
 
@@ -166,7 +167,7 @@ def encode_leq(left, right, ranks, n):
         raise ValueError("Incompleteble types in leq")
 
 
-def encode_formula(text, env, ranks, n):
+def encode_formula(text, env, ranks, n, atoms):
     text = text.strip()
     if text.startswith('(') and text.endswith(')'):
         balance = 0
@@ -179,7 +180,7 @@ def encode_formula(text, env, ranks, n):
                 if balance == 0 and first_balance_zero == -1:
                     first_balance_zero = pos
         if first_balance_zero == len(text) - 1:
-            return encode_formula(text[1:-1], env, ranks, n)
+            return encode_formula(text[1:-1], env, ranks, n, atoms)
     
     balance = 0
     for pos in range(0, len(text)):
@@ -188,7 +189,7 @@ def encode_formula(text, env, ranks, n):
         elif text[pos] == ')':
             balance -= 1
         elif text[pos] == '∨' and balance == 0:
-            return Or(encode_formula(text[0:pos], env, ranks, n), encode_formula(text[pos + 1:], env, ranks, n))
+            return Or(encode_formula(text[0:pos], env, ranks, n, atoms), encode_formula(text[pos + 1:], env, ranks, n, atoms))
     
     balance = 0
     for pos in range(0, len(text)):
@@ -197,7 +198,7 @@ def encode_formula(text, env, ranks, n):
         elif text[pos] == ')':
             balance -= 1
         elif text[pos] == '∧' and balance == 0:
-            return And(encode_formula(text[0:pos], env, ranks, n), encode_formula(text[pos + 1:], env, ranks, n))
+            return And(encode_formula(text[0:pos], env, ranks, n, atoms), encode_formula(text[pos + 1:], env, ranks, n, atoms))
 
     if text == "⊥":
         return BoolVal(False)
@@ -222,6 +223,11 @@ def encode_formula(text, env, ranks, n):
         elif text[pos] == '≤' and balance == 0:
             return encode_leq(encode_term(text[0:pos], env), encode_term(text[pos + 1:], env), ranks, n)
 
+
+    if len(text) == 1 and text[0].isalpha():
+        if text not in atoms:
+            atoms[text] = Bool("atom:" + text)
+        return atoms[text]
     raise ValueError(f"Unsupported formula: {text!r}")
 
 def decode_model_value(value, ranks, model):
@@ -233,9 +239,9 @@ def decode_model_value(value, ranks, model):
     return (decode_model_value(value[0], ranks, model), decode_model_value(value[1], ranks, model))
 
 
-if (__name__ == "__main__"):
+def main() -> int:
     parser = ArgumentParser(prog="oracle",
-                            description="Oracle for simplicial logic which is based on Z3")
+                                description="Oracle for simplicial logic which is based on Z3")
     parser.add_argument('input')
     args = parser.parse_args()
     try:
@@ -251,11 +257,11 @@ if (__name__ == "__main__"):
             solver.add(rank >= encode_interval("0", ranks, n))
             solver.add(rank <= encode_interval("1", ranks, n))
 
+        atoms = {}
         for hypothesis in hypotheses:
-            solver.add(encode_formula(hypothesis, env, ranks, n))
-
-        solver.add(Not(encode_formula(goal, env, ranks, n)))
-
+            solver.add(encode_formula(hypothesis, env, ranks, n, atoms))
+    
+        solver.add(Not(encode_formula(goal, env, ranks, n, atoms)))  
         result = solver.check()
         if result == sat:
             print("underivable")
@@ -264,11 +270,18 @@ if (__name__ == "__main__"):
             for cube in env:
                 values.append(str(cube) + " " + str(decode_model_value(env[cube], ranks, model)))
             print("countermodel " + ', '.join(values))
-        else:
+            return 0
+        elif result == unsat:
             print("derivable")
+            return 0
+        else:
+            print("unknown", file=sys.stderr)
+            return -1
 
     except FileNotFoundError:
-        print("input file not found")
+        print("input file not found", file=sys.stderr)
+        return -1
 
 
-
+if (__name__ == "__main__"):
+    sys.exit(main())

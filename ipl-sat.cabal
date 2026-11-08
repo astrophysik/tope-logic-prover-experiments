@@ -115,5 +115,7 @@ test-suite ipl-sat-test
     , filepath
     , hspec
     , ipl-sat
+    , process
+    , text
     , yaml
   default-language: Haskell2010
